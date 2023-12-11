@@ -1,0 +1,189 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+    background: peachpuff;
+    color: saddlebrown;
+    height: 100vh;
+}
+
+.main {
+	display: flex;
+	height: 100%;
+}
+
+#beforebg {
+	width: 26%;
+}
+
+#bg {
+	background-image: url("background.jpg");
+	background-size: cover;
+	width: 0%;
+	
+	animation: bgslide 2s 2s forwards 1  ease-in-out, 
+	bgslide 2s 8s forwards 1 reverse ease-in-out;
+}
+
+#afterbg {
+	width: 42%;
+}
+
+@keyframes bgslide{
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+#beforebg #text {
+	color: white;
+	position: relative;
+	transform: scaleX(1.5);
+	
+	top: 50%;
+	left: 50%;
+}
+
+#text h1 {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	line-height: 42px;
+	margin: 8px 8px;
+	
+	font-style: bold;
+	font-size: 46px;
+	position: relative;
+	
+	animation: textslide 2s 2s 1 forwards ease-in-out, 
+	textslide 2s 6s 1 forwards reverse ease-in-out;
+	right: 120%;
+}
+
+#text span {
+	background: white;
+	position: absolute;
+	width: 120%;
+	height: 100%;
+	
+	animation: textslideborderin 2s 1 forwards ease-in-out, textslideborderout 2s 2s 1 forwards ease-in-out, textslideborderin 2s 6s 1 forwards ease-in-out, textslideborderout 2s 8s 1 forwards ease-in-out;
+}
+
+@keyframes textslide {
+	from{
+		right: 120%;
+	}
+	to{
+		right: 0%;
+	}
+}
+
+@keyframes textslideborderin {
+	from{
+		width: 0%;
+	}
+	to{
+		width: 120%;
+	}
+}
+
+@keyframes textslideborderout {
+	from{
+		width: 120%;
+	}
+	to{
+		width: 0%;
+	}
+}
+
+#afterbg img {
+	position: absolute;
+	height: 42%;
+	top: 150%;
+	right: 20%;
+	
+		animation: sideimgslide 2s 2.5s forwards 1  ease-in-out, sideimgslide 2s 8s forwards 1 reverse ease-in-out;
+}
+
+@keyframes sideimgslide{
+	from {
+		top: 150%;
+	}
+	to {
+		top: 40%;
+	}
+}
+
+#beforebg #title {
+	position: absolute;
+	top: 10%;
+	left: -50%;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-weight: 600;
+	color: white;
+	
+	animation: slidetitle 4s 1s forwards 1  ease-in-out, slidetitle 4s 8s forwards 1 reverse ease-in-out;
+}
+
+@keyframes slidetitle {
+	from{
+		left: -50%;
+	}
+	to{
+		left: 10%;
+	}
+}
+
+#afterbg h1 {
+	text-transform: uppercase;
+	position: absolute;
+	top: -100%;
+	right: 3%;
+	transform: rotate(90deg);
+	font-size: 36px;
+	letter-spacing: 6px;
+	color: transparent;
+	-webkit-text-stroke-color: white;
+	-webkit-text-stroke-width: 1px;
+	
+	animation: text90 4s 1s forwards 1  ease-in-out,
+	text90 4s 8s forwards 1  reverse ease-in-out;
+}
+
+@keyframes text90 {
+	from{
+		top: -100%;
+	}
+	to{
+		top: 46%;
+	}
+}
+
+
+@media (max-width: 768px){
+	#beforebg #text {
+		top: 60%;
+	}
+	#beforebg h1 {
+		font-size: 24px;
+		letter-spacing: 3px;
+	}
+	#afterbg h1 {
+		right: -14%;
+	}
+	#afterbg img {
+		height: 28%;
+		right: -6%;
+	}
+	#bg{
+		background-position: 850px 900px;
+	
+	}
+}
